@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionEmpleadosReactJs.Server", "GestionEmpleadosReactJs.Server\GestionEmpleadosReactJs.Server.csproj", "{9A369A72-F237-41B3-95DF-2887CEBAF14C}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "gestionempleadosreactjs.client", "gestionempleadosreactjs.client\gestionempleadosreactjs.client.esproj", "{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionEmpleados.Models", "GestionEmpleados.Models\GestionEmpleados.Models.csproj", "{37DA794F-1300-48F0-BFF0-E5C3500524B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionEmpleados.AccessData", "GestionEmpleados.AccessData\GestionEmpleados.AccessData.csproj", "{8401113F-543D-43C7-AFA7-2556B3D10D10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionEmpleados.BusinessLogic", "GestionEmpleados.BusinessLogic\GestionEmpleados.BusinessLogic.csproj", "{65EB026F-05E2-4549-B619-BF4CDC325C89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A369A72-F237-41B3-95DF-2887CEBAF14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A369A72-F237-41B3-95DF-2887CEBAF14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A369A72-F237-41B3-95DF-2887CEBAF14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A369A72-F237-41B3-95DF-2887CEBAF14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B754BF1-03BF-41B9-B169-95CF6AC3A76A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{37DA794F-1300-48F0-BFF0-E5C3500524B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DA794F-1300-48F0-BFF0-E5C3500524B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DA794F-1300-48F0-BFF0-E5C3500524B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DA794F-1300-48F0-BFF0-E5C3500524B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8401113F-543D-43C7-AFA7-2556B3D10D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8401113F-543D-43C7-AFA7-2556B3D10D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8401113F-543D-43C7-AFA7-2556B3D10D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8401113F-543D-43C7-AFA7-2556B3D10D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65EB026F-05E2-4549-B619-BF4CDC325C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EB026F-05E2-4549-B619-BF4CDC325C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EB026F-05E2-4549-B619-BF4CDC325C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EB026F-05E2-4549-B619-BF4CDC325C89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF558CCD-B648-4DFA-82AC-19957F9F4074}
+	EndGlobalSection
+EndGlobal
