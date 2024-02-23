@@ -11,7 +11,10 @@ Env.Load();
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(jsonOptions =>
+{
+    jsonOptions.JsonSerializerOptions.IgnoreReadOnlyFields = true;
+});
 builder.Services.AddAuthentication(options => { 
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;

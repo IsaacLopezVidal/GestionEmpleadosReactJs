@@ -35,7 +35,7 @@ namespace GestionEmpleadosReactJs.Server.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserModel model)
+        public IActionResult Register([FromBody] UserRegisterModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -46,8 +46,13 @@ namespace GestionEmpleadosReactJs.Server.Controllers
                 return Conflict(Messages.UserExist);
             }
             var UsuarioNuevo = _auth.UserRegister(model);
-            return Ok(UsuarioNuevo);
+            return Ok();
         }
-      
+
+        [HttpGet("GetCargos")]
+        public IActionResult GetCargos() => Ok(_auth.GetCargos());
+
+        [HttpGet("GetDepartamentos")]
+        public IActionResult gGtDepartamentos() => Ok(_auth.GetDepartamento());
     }
 }

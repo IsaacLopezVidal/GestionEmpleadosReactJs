@@ -2,12 +2,10 @@
 using GestionEmpleados.AccessData;
 using GestionEmpleados.Models;
 using GestionEmpleados.Models.Domain;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace GestionEmpleados.BusinessLogic.Services.Auth
 {
@@ -46,7 +44,7 @@ namespace GestionEmpleados.BusinessLogic.Services.Auth
         }
         private string GethashedPassword(string Password,string Salt)=> BCrypt.Net.BCrypt.HashPassword(Password + Salt, Salt, true, hashType: BCrypt.Net.HashType.SHA384);
         private bool GethashedVerify(string Password, string Salt, string HashedPassword) => BCrypt.Net.BCrypt.Verify(Password+Salt, HashedPassword,true,hashType:BCrypt.Net.HashType.SHA384);
-        public UserModel UserRegister(UserModel model)
+        public UserRegisterModel UserRegister(UserRegisterModel model)
         {
             string salt = BCrypt.Net.BCrypt.GenerateSalt();
             string hashedPassword = GethashedPassword(model.Password, salt);
@@ -54,8 +52,8 @@ namespace GestionEmpleados.BusinessLogic.Services.Auth
             {
                 Nombre = model.FirstName,
                 Apellido = model.LastName,
-                CargoID = 1000,
-                DepartamentoID = 2000
+                CargoID = model.IdCargo,
+                DepartamentoID = model.IdDepartamento
             };
             _dbcontext.Add(empleado);
             _dbcontext.SaveChanges();
@@ -83,5 +81,10 @@ namespace GestionEmpleados.BusinessLogic.Services.Auth
             var user = _dbcontext.Usuario.First(e => e.EmailAddress == model.EmailAddress);
             return GethashedVerify(model.Password,user.Salt, user.HashedPassword);
         }
+
+        public IEnumerable<CombosModel> GetCargos()=> _dbcontext.CatalogosDescripciones.Where(w => w.CatalogoId == 1).Select(c => new CombosModel { Id = c.CatalogoDescripcionId, Descripcion = c.Descripcion });
+        
+
+        public IEnumerable<CombosModel> GetDepartamento()=>  _dbcontext.CatalogosDescripciones.Where(w => w.CatalogoId == 2).Select(c => new CombosModel { Id = c.CatalogoDescripcionId, Descripcion = c.Descripcion });
     }
 }
